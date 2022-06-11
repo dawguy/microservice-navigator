@@ -1,5 +1,6 @@
 (ns microservice-navigator
-  (:require [clojure.string :as str]))
+  (:require [clojure.string :as str]
+            [clojure.java.browse :as browse]))
 
 (defn get-current-directory [] (let [path (str/split (.getAbsolutePath (clojure.java.io/file "./")) #"/")]
                                  (first (drop (- (count path) 2) path))))
@@ -60,7 +61,7 @@
                             :let [o (nth sub-options i)]]
                         (str (inc i) ": " (:label o) (if (not= (count sub-options) (inc i)) "\n")))))
       (let [selected-sub-option (read-line)]
-        (if (string? selected-sub-option) (:path (nth sub-options (Integer/parseInt selected-sub-option))) nil)
+        (if (string? selected-sub-option) (:path (nth sub-options (dec (Integer/parseInt selected-sub-option)))) nil)
         )
       )))
 
@@ -83,7 +84,7 @@
 (defn gen-list [o]
   (map #(str % (second o)) (first o)))
 
-(defn open-in-browser [s] (println s))
+(defn open-in-browser [s] (browse/browse-url s))
 
 ; Idea. Make sure the option for branch is allowed
 (defn run [& opts]
@@ -94,6 +95,7 @@
                  (do
                    (open-in-browser (first p))
                    (recur (rest p)))))
+  (shutdown-agents)
   )
 
 (run)
