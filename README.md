@@ -21,7 +21,9 @@ If you are currently in the top level of a microservice mapped by *microservice-
 
 ## Requirements
 Clojure - https://clojure.org/guides/install_clojure
+
 Java - https://clojure.org/guides/install_clojure#java
+
 Babashka - https://github.com/babashka/babashka#installation
 
 ## Why
