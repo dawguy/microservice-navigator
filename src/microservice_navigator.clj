@@ -9,12 +9,12 @@
 ; Goal for near future is to load this list from SQLite. Goal is to map what the microservice directories are called with
 ; the source control host's website for them
 (def microservice-mapping
-  {"abc" "http://www.github.com/dawguy/aaa"
-   "def" "http://www.github.com/dawguy/zzz"
-   "ghj" "http://www.github.com/dawguy/123"
-   ;"microservice-navigator" "http://www.github.com/dawguy/microservice-navigator" ; Uncomment to test being called from within top-level directory of microservice
-   ".nrepl-port" "https://github.com/dawguy/websockets-tictactoe"
-   "LICENSE.txt" "https://github.com/dawguy/websockets-tictactoe-client"
+  {
+   "microservice-navigator" "http://www.github.com/dawguy/microservice-navigator"
+   "kelly-criterion" "https://github.com/dawguy/kelly-criterion"
+   "kelly-criterion-client" "https://github.com/dawguy/kelly-criterion-client"
+   "Rowing" "https://github.com/dawguy/Rowing"
+   "rowing-client" "https://github.com/dawguy/Rowing/tree/main/rowing-client"
    })
 
 ; Not that many options so these can be hard-coded lists.
