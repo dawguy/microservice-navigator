@@ -14,7 +14,15 @@ The goal of this project is to make navigating around gitlab microservices easie
 The install procedure creates an executable shell script called msn and places it into /usr/local/bin.
 Note: It hard-codes the path to this clojure project, so if microservice-navigator ever gets moved you will need to rerun the install script.
 
+## Usage
 After running install.sh you can execute this program by typing `msn` from any folder.
+
+If you are currently in the top level of a microservice mapped by *microservice-mapping* that microservice will be opened. If you are in a folder containing microservices you will be prompted to select which microservice you wish to open.
+
+## Requirements
+Clojure - https://clojure.org/guides/install_clojure
+Java - https://clojure.org/guides/install_clojure#java
+Babashka - https://github.com/babashka/babashka#installation
 
 ## Why
 Mostly to speed everything up a bit, I'm moving into a position where more gitlab navigation wil be necessary. So having an extensible CLI tool which saves ~15 seconds per repo will be a lifesaver.
